@@ -1,6 +1,6 @@
 tum_dataset=$1
 
-if ["${tum_dataset}" == "fr1_desk"]; then
+if [ "${tum_dataset}" == "fr1_desk" ]; then
   ../bin/tum_rgbd \
   ../ORB-SLAM3/Vocabulary/ORBvoc.txt \
   ../cfg/ORB_SLAM3/RGB-D/TUM/tum_freiburg1_desk.yaml \
