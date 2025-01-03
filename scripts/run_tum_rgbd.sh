@@ -1,5 +1,9 @@
 tum_dataset=$1
 
+if [ -z "$tum_dataset" ]; then
+  echo "Usage: $0 <tum_dataset>"
+  exit 1
+fi
 
 if [ "${tum_dataset}" == "fr1_desk" ]; then
   ../bin/tum_rgbd \
@@ -9,6 +13,9 @@ if [ "${tum_dataset}" == "fr1_desk" ]; then
   /root/code/datasets/tum/rgbd_dataset_freiburg1_desk \
   /root/code/datasets/tum/rgbd_dataset_freiburg1_desk/association.txt \
   /root/code/output/
+elif [ "${tum_dataset}" == "fr1_room" ]; then
+  echo "Other datasets to be done..."
 else
-  echo "Usage: run_tum_rgbd.sh $tum_dataset" 
+  echo "Usage: $0 <tum_dataset>"
+  exit 1
 fi
